@@ -11,4 +11,4 @@ router = APIRouter(
 @router.post("/")
 def create_table(table: CreateTableQuery):
     getTables()
-    pass
+    return {'message': 'success'}

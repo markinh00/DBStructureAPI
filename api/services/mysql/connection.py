@@ -20,7 +20,7 @@ class MySQL:
 
             if self.connection.is_connected():
                 print("Successfully connected to the database")
-                return self.connection
+                return None
         except Error as e:
             print(f"Error while connecting to MySQL: {e}")
             return None
