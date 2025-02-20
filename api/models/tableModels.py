@@ -1,5 +1,7 @@
 from pydantic import BaseModel
+from api.models.columnModels import ColumnModel
 
 
-class CreateTableQuery(BaseModel):
-    table: str
+class TableModel(BaseModel):
+    table_name: str
+    columns: list[ColumnModel]
