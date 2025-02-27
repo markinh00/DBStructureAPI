@@ -1,18 +1,17 @@
 import os
 from mysql.connector.abstracts import MySQLCursorAbstract
-
+from api.helpers.objectid import PydanticObjectId
 from api.models.columnModels import ColumnModel
 from api.models.tableModels import TableModel
 from api.services.mysql.connection import MySQL
 
-def getTables() -> None | list[TableModel]:
-    database = os.getenv("mysql_database")
+def getTables(database: str) -> None | list[TableModel]:
     mysql = MySQL()
     cursor: MySQLCursorAbstract | None = None
     result: list[TableModel] = []
 
     try:
-        mysql.connect()
+        mysql.connect(database=database)
         cursor = mysql.connection.cursor(dictionary=True)
 
         cursor.execute("SHOW TABLES;")
@@ -78,7 +77,7 @@ def getTables() -> None | list[TableModel]:
         return result
 
     except Exception as e:
-        print(e)
+        raise e
 
     finally:
         if cursor:
