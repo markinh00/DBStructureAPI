@@ -1,10 +1,10 @@
-# RedisAPI
+# DBStructureAPI
 
 Uma API para o TCC de engenharia de software
 
 ## 🛠️ Stack utilizada
 **Backend:** Python, FastAPI
-**Database:** Redis
+**Databases:** MongoDB, MySql
 
 ## 🚀 Instalação e execução local
 Para instalar as dependências do projeto
