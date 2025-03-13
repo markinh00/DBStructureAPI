@@ -1,6 +1,4 @@
-import os
 from mysql.connector.abstracts import MySQLCursorAbstract
-from api.helpers.objectid import PydanticObjectId
 from api.models.columnModels import ColumnModel
 from api.models.tableModels import TableModel
 from api.services.mysql.connection import MySQL
